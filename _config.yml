@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://KennyLonng.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: Yanlong Blog
+subtitle: 生活的小丑.
+author: Yanlong
 simple_search: http://google.com/search
 description:
 
@@ -98,3 +98,15 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+# 其它内容....
+default_asides: [asides/recent_posts.html, asides/weibo.html, asides/github.html]
+# # 其它内容....
+# # Weibo
+# # Please refer to http://weibo.com/tool/weiboshow to get your uid and verifier.
+weibo_uid: 1683965300          # 填入uid
+weibo_verifier: 93317114     # 填入verifier
+# weibo_fansline: 0   # 粉丝显示多少行
+weibo_show: true    # 是否显示最近微博内容
+weibo_pic: true     # 是否显示微博中的图片
+weibo_skin: 10      # 使用哪种配色风格，数字为从1开始的微博秀风格序号
