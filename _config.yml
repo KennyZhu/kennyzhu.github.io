@@ -4,10 +4,10 @@
 
 url: http://KennyZhu.github.io
 title: Yanlong Blog
-subtitle: 生活的小丑.
+subtitle: 生活的小丑
 author: Yanlong
 simple_search: http://google.com/search
-description:
+description: 保持进步
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -73,7 +73,7 @@ twitter_user:
 twitter_tweet_button: true
 
 # Google +1
-google_plus_one: false
+google_plus_one: true
 google_plus_one_size: medium
 
 # Google Plus Profile
@@ -94,10 +94,10 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-40794374-1
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
 
 # 其它内容....
 default_asides: [asides/recent_posts.html, asides/weibo.html, asides/github.html]
