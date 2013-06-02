@@ -4,7 +4,7 @@
   <title><![CDATA[生活的小丑]]></title>
   <link href="http://KennyZhu.github.io/atom.xml" rel="self"/>
   <link href="http://KennyZhu.github.io/"/>
-  <updated>2013-06-02T06:00:26-07:00</updated>
+  <updated>2013-06-02T08:12:02-07:00</updated>
   <id>http://KennyZhu.github.io/</id>
   <author>
     <name><![CDATA[Kenny]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby单例]]></title>
+    <link href="http://KennyZhu.github.io/blog/2013/05/20/rubydan-li/"/>
+    <updated>2013-05-20T02:20:00-07:00</updated>
+    <id>http://KennyZhu.github.io/blog/2013/05/20/rubydan-li</id>
+    <content type="html"><![CDATA[<p>Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">RubySingleton</span>
+</span><span class='line'>  <span class="nb">private_class_method</span> <span class="ss">:new</span>
+</span><span class='line'>  <span class="vc">@@instance</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">RubySingleton</span><span class="o">.</span><span class="nf">instance</span>
+</span><span class='line'>    <span class="vc">@@instance</span> <span class="o">=</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">new</span> <span class="k">unless</span> <span class="o">!</span><span class="vc">@@instance</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[从这里出发]]></title>

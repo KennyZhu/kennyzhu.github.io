@@ -9,8 +9,18 @@
   <meta name="author" content="Kenny">
 
   
-  <meta name="description" content="捣鼓一晚上，搭了个新blog,用于记录一些日常工作学习中的感悟和积累，从这里出发:)
-">
+  <meta name="description" content="Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式： 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+class RubySingleton private_class_method :new @@instance = nil def RubySingleton.instance &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -32,6 +42,18 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40794374-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -70,6 +92,71 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/05/20/rubydan-li/">Ruby单例</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-20T02:20:00-07:00" pubdate data-updated="true">May 20<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/20/rubydan-li/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">RubySingleton</span>
+</span><span class='line'>  <span class="nb">private_class_method</span> <span class="ss">:new</span>
+</span><span class='line'>  <span class="vc">@@instance</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">RubySingleton</span><span class="o">.</span><span class="nf">instance</span>
+</span><span class='line'>    <span class="vc">@@instance</span> <span class="o">=</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">new</span> <span class="k">unless</span> <span class="o">!</span><span class="vc">@@instance</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/05/08/cong-zhe-li-chu-fa/">从这里出发</a></h1>
     
     
@@ -87,6 +174,8 @@
 
 
 <time datetime="2013-05-08T08:51:00-07:00" pubdate data-updated="true">May 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/08/cong-zhe-li-chu-fa/#disqus_thread">Comments</a>
         
       </p>
     
@@ -114,6 +203,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/20/rubydan-li/">Ruby单例</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/08/cong-zhe-li-chu-fa/">从这里出发</a>
       </li>
     
@@ -135,9 +228,39 @@
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'kennyzhu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
