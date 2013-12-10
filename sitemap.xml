@@ -2,30 +2,34 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://KennyZhu.github.io/blog/2013/05/08/cong-zhe-li-chu-fa/</loc>
-        <lastmod>2013-07-20T21:58:16-07:00</lastmod>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://KennyZhu.github.io/blog/2013/05/20/rubydan-li/</loc>
-        <lastmod>2013-07-20T21:58:16-07:00</lastmod>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://KennyZhu.github.io/blog/2013/06/07/bu-duan-ren-shi-zi-ji/</loc>
-        <lastmod>2013-07-20T21:58:16-07:00</lastmod>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://KennyZhu.github.io/blog/2013/07/20/reactormo-shi/</loc>
-        <lastmod>2013-07-20T22:47:43-07:00</lastmod>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://KennyZhu.github.io/</loc>
-        <lastmod>2013-07-20T22:47:43-07:00</lastmod>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://KennyZhu.github.io/blog/archives/</loc>
-        <lastmod>2013-07-20T22:47:43-07:00</lastmod>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://KennyZhu.github.io/blog/categories/</loc>
+        <lastmod>2013-12-10T07:48:43-08:00</lastmod>
     </url>
     <url>
         <loc>http://KennyZhu.github.io/robots.txt</loc>
-        <lastmod>2013-07-20T21:58:17-07:00</lastmod>
+        <lastmod>2013-12-10T07:37:12-08:00</lastmod>
     </url>
 </urlset>
