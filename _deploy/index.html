@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="0v2oOjPqmi" />
+	<title>生活的小丑</title>
+	<meta name="author" content="Kenny">
+	<!-- add 14-05-07 -->
+	<meta name="keywords" content="Kenny,生活的小丑,KennyZhu" />
+	<meta name="keywords" content="Kenny,生活的小丑,KennyZhu" />
+	
+	<meta name="description" content="Jul 20th, 2013 并发/分布式 Comments Reactor模式(一) Reactor模式是在并发系统中常用的一种模式，用于替代常用的多线程的处理方式，节省系统的资源，提高系统的吞吐。 先说一下在网上看到的一个比较直观的对Reactor模式的解释：
+以一个餐饮为例， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="生活的小丑" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://KennyZhu.github.io/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-40794374-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		//	$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+			$('.profilepic').append("<img src='/images/img_0852.jpg' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<hgroup>
+  <h1><a href="/">生活的小丑</a></h1>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    <span style="color:white"><strong>保持进步</strong></span>
+  </p>
+</section>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-20T22:11:00-07:00" data-updated="true" itemprop="datePublished">Jul 20<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/bing-fa-slash-fen-bu-shi/'>并发/分布式</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/07/20/reactormo-shi/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/07/20/reactormo-shi/" itemprop="url">Reactor模式(一)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Reactor模式是在并发系统中常用的一种模式，用于替代常用的多线程的处理方式，节省系统的资源，提高系统的吞吐。</p>
+
+<p>先说一下在网上看到的一个比较直观的对Reactor模式的解释：
+以一个餐饮为例，每一个人来就餐就是一个事件，他会先看一下菜单，然后点餐。就像一个网站会有很多的请求，要求服务器做一些事情。处理这些就餐事件的就需要我们的服务人员了。</p>
+
+<p>在多线程处理的方式会是这样的：</p>
+
+<p>一个人来就餐，一个服务员去服务，然后客人会看菜单，点菜。 服务员将菜单给后厨。</p>
+
+<p>二个人来就餐，二个服务员去服务……</p>
+
+<p>五个人来就餐，五个服务员去服务……</p>
+
+<p>这个就是多线程的处理方式，一个事件到来，就会有一个线程服务。很显然这种方式在人少的情况下会有很好的用户体验，每个客人都感觉自己是VIP，专人服务的。如果餐厅一直这样同一时间最多来5个客人，这家餐厅是可以很好的服务下去的。</p>
+
+<p>来了一个好消息，因为这家店的服务好，吃饭的人多了起来。同一时间会来10个客人，老板很开心，但是只有5个服务员，这样就不能一对一服务了，有些客人就要没有人管了。老板就又请了5个服务员，现在好了，又能每个人都受VIP待遇了。</p>
+
+<p>越来越多的人对这家餐厅满意，客源又多了，同时来吃饭的人到了20人，老板高兴不起来了，再请服务员吧，占地方不说，
+还要开工钱，再请人就攒不到钱了。怎么办呢？老板想了想，10个服务员对付20个客人也是能对付过来的，服务员勤快点就</p>
+
+<p>好了，伺候完一个客人马上伺候另外一个，还是来得及的。综合考虑了一下，老板决定就使用10个服务人员的线程池啦~~~但是这样有一个比较严重的缺点就是，如果正在接受服务员服务的客人点菜很慢，其他的客人可能就要等好长时间了。有些火爆脾气的客人可能就等不了走人了。</p>
+
+<p>Reactor如何处理这个问题呢：</p>
+
+<p>老板后来发现，客人点菜比较慢，大部服务员都在等着客人点菜，其实干的活不是太多。老板能当老板当然有点不一样的地方，终于发现了一个新的方法，那就是：当客人点菜的时候，服务员就可以去招呼其他客人了，等客人点好了菜，直接招呼一声“服务员”，马上就有个服务员过去服务。嘿嘿，然后在老板有了这个新的方法之后，就进行了一次裁员，只留了一个服务员！这就是用单个线程来做多线程的事。</p>
+
+<p>实际的餐馆都是用的Reactor模式在服务。一些设计的模型其实都是从生活中来的。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-07T23:18:00-07:00" data-updated="true" itemprop="datePublished">Jun 7<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/sheng-huo/'>生活</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/06/07/bu-duan-ren-shi-zi-ji/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/06/07/bu-duan-ren-shi-zi-ji/" itemprop="url">不断认识自己</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>每个月总有那么两三天让人格外操心&hellip;&hellip;</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-20T02:20:00-07:00" data-updated="true" itemprop="datePublished">May 20<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/05/20/rubydan-li/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/05/20/rubydan-li/" itemprop="url">Ruby单例</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">RubySingleton</span>
+</span><span class='line'>  <span class="nb">private_class_method</span> <span class="ss">:new</span>
+</span><span class='line'>  <span class="vc">@@instance</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">RubySingleton</span><span class="o">.</span><span class="nf">instance</span>
+</span><span class='line'>    <span class="vc">@@instance</span> <span class="o">=</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">new</span> <span class="k">unless</span> <span class="o">!</span><span class="vc">@@instance</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-08T08:51:00-07:00" data-updated="true" itemprop="datePublished">May 8<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/05/08/cong-zhe-li-chu-fa/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/05/08/cong-zhe-li-chu-fa/" itemprop="url">从这里出发</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>捣鼓一晚上，搭了个新blog,用于记录一些日常工作学习中的感悟和积累，从这里出发:)</p>
+
+		
+		
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2014 - Kenny -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			
+
+<script type="text/javascript">
+      var disqus_shortname = 'kennyzhu';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

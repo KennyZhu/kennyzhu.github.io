@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://KennyZhu.github.io/sitemap.xml 
