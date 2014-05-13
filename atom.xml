@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[生活的小丑]]></title>
-  <link href="http://KennyZhu.github.io/atom.xml" rel="self"/>
-  <link href="http://KennyZhu.github.io/"/>
-  <updated>2014-05-07T01:15:32-07:00</updated>
-  <id>http://KennyZhu.github.io/</id>
+  <link href="http://www.zkenny.com/atom.xml" rel="self"/>
+  <link href="http://www.zkenny.com/"/>
+  <updated>2014-05-13T23:35:25+08:00</updated>
+  <id>http://www.zkenny.com/</id>
   <author>
     <name><![CDATA[Kenny]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Reactor模式(一)]]></title>
-    <link href="http://KennyZhu.github.io/blog/2013/07/20/reactormo-shi/"/>
-    <updated>2013-07-20T22:11:00-07:00</updated>
-    <id>http://KennyZhu.github.io/blog/2013/07/20/reactormo-shi</id>
+    <link href="http://www.zkenny.com/blog/2013/07/20/reactormo-shi/"/>
+    <updated>2013-07-20T22:11:00+08:00</updated>
+    <id>http://www.zkenny.com/blog/2013/07/20/reactormo-shi</id>
     <content type="html"><![CDATA[<p>Reactor模式是在并发系统中常用的一种模式，用于替代常用的多线程的处理方式，节省系统的资源，提高系统的吞吐。</p>
 
 <p>先说一下在网上看到的一个比较直观的对Reactor模式的解释：
@@ -50,18 +50,18 @@
   
   <entry>
     <title type="html"><![CDATA[不断认识自己]]></title>
-    <link href="http://KennyZhu.github.io/blog/2013/06/07/bu-duan-ren-shi-zi-ji/"/>
-    <updated>2013-06-07T23:18:00-07:00</updated>
-    <id>http://KennyZhu.github.io/blog/2013/06/07/bu-duan-ren-shi-zi-ji</id>
+    <link href="http://www.zkenny.com/blog/2013/06/07/bu-duan-ren-shi-zi-ji/"/>
+    <updated>2013-06-07T23:18:00+08:00</updated>
+    <id>http://www.zkenny.com/blog/2013/06/07/bu-duan-ren-shi-zi-ji</id>
     <content type="html"><![CDATA[<p>每个月总有那么两三天让人格外操心&hellip;&hellip;</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby单例]]></title>
-    <link href="http://KennyZhu.github.io/blog/2013/05/20/rubydan-li/"/>
-    <updated>2013-05-20T02:20:00-07:00</updated>
-    <id>http://KennyZhu.github.io/blog/2013/05/20/rubydan-li</id>
+    <link href="http://www.zkenny.com/blog/2013/05/20/rubydan-li/"/>
+    <updated>2013-05-20T02:20:00+08:00</updated>
+    <id>http://www.zkenny.com/blog/2013/05/20/rubydan-li</id>
     <content type="html"><![CDATA[<p>Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式：</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -95,9 +95,9 @@
   
   <entry>
     <title type="html"><![CDATA[从这里出发]]></title>
-    <link href="http://KennyZhu.github.io/blog/2013/05/08/cong-zhe-li-chu-fa/"/>
-    <updated>2013-05-08T08:51:00-07:00</updated>
-    <id>http://KennyZhu.github.io/blog/2013/05/08/cong-zhe-li-chu-fa</id>
+    <link href="http://www.zkenny.com/blog/2013/05/08/cong-zhe-li-chu-fa/"/>
+    <updated>2013-05-08T08:51:00+08:00</updated>
+    <id>http://www.zkenny.com/blog/2013/05/08/cong-zhe-li-chu-fa</id>
     <content type="html"><![CDATA[<p>捣鼓一晚上，搭了个新blog,用于记录一些日常工作学习中的感悟和积累，从这里出发:)</p>
 ]]></content>
   </entry>

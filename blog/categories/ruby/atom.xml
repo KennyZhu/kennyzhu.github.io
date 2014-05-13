@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby | 生活的小丑]]></title>
-  <link href="http://KennyZhu.github.io/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://KennyZhu.github.io/"/>
-  <updated>2014-05-07T01:15:32-07:00</updated>
-  <id>http://KennyZhu.github.io/</id>
+  <link href="http://www.zkenny.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://www.zkenny.com/"/>
+  <updated>2014-05-13T23:35:25+08:00</updated>
+  <id>http://www.zkenny.com/</id>
   <author>
     <name><![CDATA[Kenny]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ruby单例]]></title>
-    <link href="http://KennyZhu.github.io/blog/2013/05/20/rubydan-li/"/>
-    <updated>2013-05-20T02:20:00-07:00</updated>
-    <id>http://KennyZhu.github.io/blog/2013/05/20/rubydan-li</id>
+    <link href="http://www.zkenny.com/blog/2013/05/20/rubydan-li/"/>
+    <updated>2013-05-20T02:20:00+08:00</updated>
+    <id>http://www.zkenny.com/blog/2013/05/20/rubydan-li</id>
     <content type="html"><![CDATA[<p>Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式：
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

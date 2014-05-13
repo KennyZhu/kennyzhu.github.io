@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 生活 | 生活的小丑]]></title>
-  <link href="http://KennyZhu.github.io/blog/categories/sheng-huo/atom.xml" rel="self"/>
-  <link href="http://KennyZhu.github.io/"/>
-  <updated>2014-05-07T01:15:32-07:00</updated>
-  <id>http://KennyZhu.github.io/</id>
+  <link href="http://www.zkenny.com/blog/categories/sheng-huo/atom.xml" rel="self"/>
+  <link href="http://www.zkenny.com/"/>
+  <updated>2014-05-13T23:35:25+08:00</updated>
+  <id>http://www.zkenny.com/</id>
   <author>
     <name><![CDATA[Kenny]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[不断认识自己]]></title>
-    <link href="http://KennyZhu.github.io/blog/2013/06/07/bu-duan-ren-shi-zi-ji/"/>
-    <updated>2013-06-07T23:18:00-07:00</updated>
-    <id>http://KennyZhu.github.io/blog/2013/06/07/bu-duan-ren-shi-zi-ji</id>
+    <link href="http://www.zkenny.com/blog/2013/06/07/bu-duan-ren-shi-zi-ji/"/>
+    <updated>2013-06-07T23:18:00+08:00</updated>
+    <id>http://www.zkenny.com/blog/2013/06/07/bu-duan-ren-shi-zi-ji</id>
     <content type="html"><![CDATA[<p>每个月总有那么两三天让人格外操心&hellip;&hellip;</p>
 ]]></content>
   </entry>

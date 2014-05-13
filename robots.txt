@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://KennyZhu.github.io/sitemap.xml 
+Sitemap: http://www.zkenny.com/sitemap.xml 
