@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[生活的小丑]]></title>
+  <link href="http://www.zkenny.com/atom.xml" rel="self"/>
+  <link href="http://www.zkenny.com/"/>
+  <updated>2014-05-15T04:45:27-07:00</updated>
+  <id>http://www.zkenny.com/</id>
+  <author>
+    <name><![CDATA[Kenny]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Reactor模式(一)]]></title>
+    <link href="http://www.zkenny.com/blog/2013/07/20/reactormo-shi/"/>
+    <updated>2013-07-20T22:11:00-07:00</updated>
+    <id>http://www.zkenny.com/blog/2013/07/20/reactormo-shi</id>
+    <content type="html"><![CDATA[<p>Reactor模式是在并发系统中常用的一种模式，用于替代常用的多线程的处理方式，节省系统的资源，提高系统的吞吐。</p>
+
+<p>先说一下在网上看到的一个比较直观的对Reactor模式的解释：
+以一个餐饮为例，每一个人来就餐就是一个事件，他会先看一下菜单，然后点餐。就像一个网站会有很多的请求，要求服务器做一些事情。处理这些就餐事件的就需要我们的服务人员了。</p>
+
+<p>在多线程处理的方式会是这样的：</p>
+
+<p>一个人来就餐，一个服务员去服务，然后客人会看菜单，点菜。 服务员将菜单给后厨。</p>
+
+<p>二个人来就餐，二个服务员去服务……</p>
+
+<p>五个人来就餐，五个服务员去服务……</p>
+
+<p>这个就是多线程的处理方式，一个事件到来，就会有一个线程服务。很显然这种方式在人少的情况下会有很好的用户体验，每个客人都感觉自己是VIP，专人服务的。如果餐厅一直这样同一时间最多来5个客人，这家餐厅是可以很好的服务下去的。</p>
+
+<p>来了一个好消息，因为这家店的服务好，吃饭的人多了起来。同一时间会来10个客人，老板很开心，但是只有5个服务员，这样就不能一对一服务了，有些客人就要没有人管了。老板就又请了5个服务员，现在好了，又能每个人都受VIP待遇了。</p>
+
+<p>越来越多的人对这家餐厅满意，客源又多了，同时来吃饭的人到了20人，老板高兴不起来了，再请服务员吧，占地方不说，
+还要开工钱，再请人就攒不到钱了。怎么办呢？老板想了想，10个服务员对付20个客人也是能对付过来的，服务员勤快点就</p>
+
+<p>好了，伺候完一个客人马上伺候另外一个，还是来得及的。综合考虑了一下，老板决定就使用10个服务人员的线程池啦~~~但是这样有一个比较严重的缺点就是，如果正在接受服务员服务的客人点菜很慢，其他的客人可能就要等好长时间了。有些火爆脾气的客人可能就等不了走人了。</p>
+
+<p>Reactor如何处理这个问题呢：</p>
+
+<p>老板后来发现，客人点菜比较慢，大部服务员都在等着客人点菜，其实干的活不是太多。老板能当老板当然有点不一样的地方，终于发现了一个新的方法，那就是：当客人点菜的时候，服务员就可以去招呼其他客人了，等客人点好了菜，直接招呼一声“服务员”，马上就有个服务员过去服务。嘿嘿，然后在老板有了这个新的方法之后，就进行了一次裁员，只留了一个服务员！这就是用单个线程来做多线程的事。</p>
+
+<p>实际的餐馆都是用的Reactor模式在服务。一些设计的模型其实都是从生活中来的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[不断认识自己]]></title>
+    <link href="http://www.zkenny.com/blog/2013/06/07/bu-duan-ren-shi-zi-ji/"/>
+    <updated>2013-06-07T23:18:00-07:00</updated>
+    <id>http://www.zkenny.com/blog/2013/06/07/bu-duan-ren-shi-zi-ji</id>
+    <content type="html"><![CDATA[<p>每个月总有那么两三天让人格外操心&hellip;&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby单例]]></title>
+    <link href="http://www.zkenny.com/blog/2013/05/20/rubydan-li/"/>
+    <updated>2013-05-20T02:20:00-07:00</updated>
+    <id>http://www.zkenny.com/blog/2013/05/20/rubydan-li</id>
+    <content type="html"><![CDATA[<p>Ruby是一种面向对象的语言，下面是写的一个Ruby版本的单例模式：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">RubySingleton</span>
+</span><span class='line'>  <span class="nb">private_class_method</span> <span class="ss">:new</span>
+</span><span class='line'>  <span class="vc">@@instance</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">RubySingleton</span><span class="o">.</span><span class="nf">instance</span>
+</span><span class='line'>    <span class="vc">@@instance</span> <span class="o">=</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">new</span> <span class="k">unless</span> <span class="o">!</span><span class="vc">@@instance</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span><span class='line'><span class="nb">puts</span> <span class="no">RubySingleton</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">object_id</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[从这里出发]]></title>
+    <link href="http://www.zkenny.com/blog/2013/05/08/cong-zhe-li-chu-fa/"/>
+    <updated>2013-05-08T08:51:00-07:00</updated>
+    <id>http://www.zkenny.com/blog/2013/05/08/cong-zhe-li-chu-fa</id>
+    <content type="html"><![CDATA[<p>捣鼓一晚上，搭了个新blog,用于记录一些日常工作学习中的感悟和积累，从这里出发:)</p>
+]]></content>
+  </entry>
+  
+</feed>
